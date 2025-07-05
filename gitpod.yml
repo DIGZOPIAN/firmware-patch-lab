@@ -1,0 +1,22 @@
+
+tasks:
+  - name: Init Environment
+    init: |
+      sudo apt update && sudo apt install -y unzip git python3-pip bluetooth bluez libglib2.0-dev
+      pip3 install flask pybluez
+    command: |
+      python3 ota-server/server.py
+      n8n start --tunnel
+ports:
+  - port: 5678
+    onOpen: open-preview
+    visibility: public
+  - port: 5000
+    onOpen: open-browser
+    visibility: public
+  - port: 4000
+    onOpen: ignore
+    visibility: private
+  - port: 22
+    onOpen: ignore
+    visibility: private
