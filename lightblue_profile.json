@@ -1,0 +1,15 @@
+{
+  "deviceName": "Scooter-XBOT",
+  "services": [
+    {
+      "uuid": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristics": [
+        {
+          "uuid": "0000fff2-0000-1000-8000-00805f9b34fb",
+          "properties": ["Write", "Read"],
+          "description": "Firmware Patch Channel"
+        }
+      ]
+    }
+  ]
+}
