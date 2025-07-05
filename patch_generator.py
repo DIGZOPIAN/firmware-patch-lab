@@ -15,8 +15,13 @@ if __name__ == '__main__':
         print("Usage: python3 patch_generator.py input.bin output.bin")
         sys.exit(1)
 
-    # Example patch (speed limiter byte at 0x1A3 set to 0xFF)
-    patch_map = { 0x01A3: 0xFF }
+    # PATCH MAP — X-Bot M365 Clone
+    patch_map = {
+        0x01A3: 0x2D,  # Eco Mode Speed: 45 km/h
+        0x01A4: 0x2D,  # Sport Mode Speed: 45 km/h
+        0x01B2: 0x01,  # Cruise Control Enabled
+        0x01D8: 0xA0   # Torque Curve Boost
+    }
 
     patch_firmware(sys.argv[1], sys.argv[2], patch_map)
-    print("Firmware patched and saved to", sys.argv[2])
+    print("✅ Firmware patched and saved to", sys.argv[2])
